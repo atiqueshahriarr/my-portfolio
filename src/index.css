@@ -1,3 +1,126 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* glow */
+.btndesign::before {
+    content: "";
+    background: linear-gradient(45deg, #002bff, #ff00c8);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(4px);
+    animation: glowing 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* hover */
+.btndesign:hover::before {
+    opacity: 1;
+}
+
+.btnAnimation {
+    position: relative;
+    color: black;
+    background: repeating-conic-gradient(from var(--a), #ff00c8 0%, #002bff 20%, transparent 10%, transparent 40%, #ff00c8 50%);
+    animation: animate 4s linear infinite;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+@property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes animate {
+    0% {
+        --a: 0deg;
+    }
+
+    100% {
+        --a: 360deg;
+    }
+}
+
+.btnAnimation::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #fff;
+}
+
+.btnProject {
+    position: relative;
+    color: black;
+    background: repeating-conic-gradient(#ff00c8 0%, #002bff 30%, transparent 0%, transparent 50%, #ff00c8 40%);
+    animation: animate 4s linear infinite;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.btnProject::before {
+    content: "";
+    background: linear-gradient(45deg, #002bff, #ff00c8);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    opacity: 0;
+}
+
+.btnProject::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #fff;
+}
+
+.btnProject:hover::before {
+    opacity: 1;
+}
+
+.project-image {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+.project-image img {
+    transition: transform 5s linear;
+    transform: translateY(0);
+}
+
+.project-image:hover img {
+    transform: translateY(-62%);
+}
+
+.navbarAnimation {
+    position: fixed;
+    z-index: 100;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: top 0.5s ease;
+}
+
+.navbarAnimation.hidden {
+    top: -64px;
+}
