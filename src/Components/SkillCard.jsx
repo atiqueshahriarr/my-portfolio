@@ -1,23 +1,22 @@
 import PropTypes from "prop-types";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const SkillCard = ({icon, iconText, stage}) => {
   return (
-    <div className="relative border flex flex-col gap-2 items-center justify-center max-h-32 h-svh hover:border-2 hover:border-[#ff00c8]">
+    <div
+      className={`relative border flex flex-col gap-2 items-center justify-center h-24 w-28 
+      ${stage ? "" : "hover:border-2 hover:border-blue-500 cursor-pointer"}`}>
       <img
         src={icon}
         alt={iconText}
-        className="w-10"
+        className="w-6"
       />
       <p>{iconText}</p>
 
-      {stage ? (
-        <>
-          <div className="absolute inset-0 flex items-center justify-center bg-blue-900 bg-opacity-70 opacity-0 hover:opacity-100 transition-opacity">
-            <p className="text-center text-white font-medium">{stage}</p>
-          </div>
-        </>
-      ) : (
-        <></>
+      {stage && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
+          <AiOutlineLoading3Quarters className="text-white text-2xl animate-spin" />
+        </div>
       )}
     </div>
   );

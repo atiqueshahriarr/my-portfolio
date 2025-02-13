@@ -1,11 +1,15 @@
 import MiddleTitle from "../Components/MiddleTitle";
 import SkillCard from "../Components/SkillCard";
+
 import CSS3 from "/Skills/CSS3.png";
 import ExpressJS from "/Skills/Express.png";
 import Firebase from "/Skills/Firebase.png";
 import HTML5 from "/Skills/HTML5.png";
 import Javascript from "/Skills/JavaScript.png";
 import MongoDB from "/Skills/MongoDB.png";
+import NextJS from "/Skills/NextJS.png";
+import Typescript from "/Skills/Typescript.png";
+
 import NodeJs from "/Skills/Node.js.png";
 import React from "/Skills/React.png";
 import Tailwind from "/Skills/Tailwind CSS.png";
@@ -30,7 +34,7 @@ const Skills = () => {
       <MiddleTitle titleName={"Skills"}></MiddleTitle>
       <div className="mt-4">
         <h5>Frontend</h5>
-        <div className="mt-2 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
+        <div className="mt-2 flex flex-wrap gap-4">
           <SkillCard
             icon={HTML5}
             iconText={"HTML5"}
@@ -51,12 +55,20 @@ const Skills = () => {
             icon={React}
             iconText={"React"}
             stage={""}></SkillCard>
+          <SkillCard
+            icon={Typescript}
+            iconText={"Typescript"}
+            stage={"Learning"}></SkillCard>
+          <SkillCard
+            icon={NextJS}
+            iconText={"NextJS"}
+            stage={"Learning"}></SkillCard>
         </div>
       </div>
 
       <div className="mt-4">
         <h5>Backend</h5>
-        <div className="mt-2 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
+        <div className="mt-2 flex flex-wrap gap-4">
           <SkillCard
             icon={NodeJs}
             iconText={"NodeJs"}
@@ -78,7 +90,7 @@ const Skills = () => {
       </div>
       <div className="mt-4">
         <h5>Tools & Technologies</h5>
-        <div className="mt-2 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
+        <div className="mt-2 flex flex-wrap gap-4">
           <SkillCard
             icon={Git}
             iconText={"Git"}
@@ -104,7 +116,7 @@ const Skills = () => {
 
       <div className="mt-4">
         <h5>Complementary</h5>
-        <div className="mt-2 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-6">
+        <div className="mt-2 flex flex-wrap gap-4">
           <SkillCard
             icon={C}
             iconText={"C"}
